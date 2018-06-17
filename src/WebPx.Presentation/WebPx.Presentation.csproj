@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1B60C520-A5DC-4340-B91F-3A48A6067FDC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebPx</RootNamespace>
+    <AssemblyName>WebPx.Presentation</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\WebPx.Presentation.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\WebPx.Presentation.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>WebPx6.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Messaging\MessageCenter.cs" />
+    <Compile Include="Messaging\MessageEventArgs.cs" />
+    <Compile Include="Messaging\MessageEventHandler.cs" />
+    <Compile Include="Messaging\MessageExtensions.cs" />
+    <Compile Include="Messaging\MessageSubscribers.cs" />
+    <Compile Include="Messaging\StandardMessages.cs" />
+    <Compile Include="Messaging\StateChangingEventArgs.cs" />
+    <Compile Include="Presentation\ApplicationController.cs" />
+    <Compile Include="Presentation\ApplicationControllerAttribute.cs" />
+    <Compile Include="Presentation\ApplicationControllerMode.cs" />
+    <Compile Include="Presentation\Blades\DynamicPageApp.cs" />
+    <Compile Include="Presentation\Blades\DynamicPageAttribute.cs" />
+    <Compile Include="Presentation\ContentType.cs" />
+    <Compile Include="Presentation\ControllerInjectedEventArgs.cs" />
+    <Compile Include="Presentation\ControllerInjectedEventHandler.cs" />
+    <Compile Include="Presentation\PresenterBuilder.cs" />
+    <Compile Include="Presentation\Controllers.cs" />
+    <Compile Include="Presentation\CreatePresenter.cs" />
+    <Compile Include="Presentation\EditPresenter.cs" />
+    <Compile Include="Presentation\DeletePresenter.cs" />
+    <Compile Include="Presentation\GetFieldEventArgs.cs" />
+    <Compile Include="Presentation\GetFieldEventHandler.cs" />
+    <Compile Include="Presentation\IController.cs" />
+    <Compile Include="Presentation\ICreateView.cs" />
+    <Compile Include="Presentation\IDeleteView.cs" />
+    <Compile Include="Presentation\IEditView.cs" />
+    <Compile Include="Presentation\IModuleController.cs" />
+    <Compile Include="Presentation\IModuleControllerT.cs" />
+    <Compile Include="Presentation\IView.cs" />
+    <Compile Include="Presentation\IViewInitialize.cs" />
+    <Compile Include="Presentation\ModelAttribute.cs" />
+    <Compile Include="Presentation\ModuleController.cs" />
+    <Compile Include="Presentation\PresentationResolverException.cs" />
+    <Compile Include="Presentation\Presenter.cs" />
+    <Compile Include="Presentation\PresenterAttribute.cs" />
+    <Compile Include="Presentation\PresenterExtensions.cs" />
+    <Compile Include="Presentation\Presenters.cs" />
+    <Compile Include="Presentation\ResolveControllerEventArgs.cs" />
+    <Compile Include="Presentation\ResolveControllerEventHandler.cs" />
+    <Compile Include="Presentation\ResolvePresenterEventArgs.cs" />
+    <Compile Include="Presentation\ResolvePresenterEventHandler.cs" />
+    <Compile Include="Presentation\Status.cs" />
+    <Compile Include="Presentation\StatusManager.cs" />
+    <Compile Include="Presentation\StatusMessage.cs" />
+    <Compile Include="Web\StatusModule.cs" />
+    <Compile Include="Presentation\StatusType.cs" />
+    <Compile Include="Presentation\ViewAttribute.cs" />
+    <Compile Include="Presentation\ViewChangedEventArgs.cs" />
+    <Compile Include="Presentation\ViewChangedEventHandler.cs" />
+    <Compile Include="Presentation\ViewItemEventArgs.cs" />
+    <Compile Include="Presentation\ViewItemEventHandler.cs" />
+    <Compile Include="Presentation\ViewResult.cs" />
+    <Compile Include="Presentation\WebApplicationController.cs" />
+    <Compile Include="Presentation\WebModuleController.cs" />
+    <Compile Include="Presentation\WebViewModuleController.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Web\WebEventArgs.cs" />
+    <Compile Include="Web\WebEventHandler.cs" />
+    <Compile Include="Web\WebEventReceiver.cs" />
+    <Compile Include="Web\WebEventRouter.cs" />
+    <Compile Include="Web\Modules\ModuleControlType.cs" />
+    <Compile Include="Web\Modules\IModuleControl.cs" />
+    <Compile Include="Web\Modules\ModuleCircularDependencyException.cs" />
+    <Compile Include="Web\Modules\ModuleControlCollection.cs" />
+    <Compile Include="Web\Modules\ModuleDefinition.cs" />
+    <Compile Include="Web\Modules\ModuleDependency.cs" />
+    <Compile Include="Web\Modules\ModuleDependencyCollection.cs" />
+    <Compile Include="Web\Modules\ModuleParts.cs" />
+    <Compile Include="Web\Modules\ModuleScript.cs" />
+    <Compile Include="Web\Modules\ModuleScriptCollection.cs" />
+    <Compile Include="Web\Modules\ModuleScripts.cs" />
+    <Compile Include="Web\Modules\ModuleControl.cs" />
+    <Compile Include="Web\Modules\ModuleStyle.cs" />
+    <Compile Include="Web\Modules\ModuleStyleCollection.cs" />
+    <Compile Include="Web\Modules\PageModuleManager.cs" />
+    <Compile Include="Web\PresentationStartup.cs" />
+    <Compile Include="Web\Compilation\PresenterInterceptor.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Presentation\Controllers.cd" />
+    <None Include="web.config.install.xdt">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="web.config.uninstall.xdt" />
+    <None Include="WebPx.Presentation.nuspec">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="WebPx6.pfx" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\..\packages\NuPack.3.4.4\build\NuPack.targets" Condition="Exists('..\..\packages\NuPack.3.4.4\build\NuPack.targets')" />
+  <Import Project="..\packages\NuPack.3.4.4\build\NuPack.targets" Condition="Exists('..\packages\NuPack.3.4.4\build\NuPack.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\NuPack.3.4.4\build\NuPack.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NuPack.3.4.4\build\NuPack.targets'))" />
+  </Target>
+  <!--<Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\packages\NuPack.3.4.4\build\NuPack.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\NuPack.3.4.4\build\NuPack.targets'))" />
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />-->
+</Project>

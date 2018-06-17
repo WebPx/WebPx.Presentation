@@ -1,0 +1,9 @@
+﻿<?xml version="1.0"?>
+<configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
+  <system.web>
+    <compilation xdt:Transform="InsertIfMissing">
+    </compilation>
+    <compilation xdt:Transform="SetAttributes(controlBuilderInterceptorType)" controlBuilderInterceptorType="WebPx.Web.Compilation.PresenterInterceptor, WebPx.Presentation">
+    </compilation>
+  </system.web>
+</configuration>

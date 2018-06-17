@@ -1,0 +1,8 @@
+﻿<?xml version="1.0"?>
+<configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
+  <system.web>
+    <compilation xdt:Transform="RemoveAttributes(controlBuilderInterceptorType)">
+    </compilation>
+    <compilation xdt:Transform="Remove" xdt:Locator="Condition(count(*)=0) and count(@*)=0" />
+  </system.web>
+</configuration>    

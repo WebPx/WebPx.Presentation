@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <id>WebPx.Presentation</id>
+        <version>1.0.0.3</version>
+        <title>WebPx Presentation Framework</title>
+        <authors>WebPx Technologies</authors>
+        <owners>WebPx Technologies</owners>
+        <licenseUrl>http://opensource.org/licenses/MIT</licenseUrl>
+        <projectUrl>https://github.com/WebPx/WebPx.Presentation</projectUrl>
+        <requireLicenseAcceptance>true</requireLicenseAcceptance>
+        <developmentDependency>true</developmentDependency>
+        <description>WebPx Core Library</description>
+        <summary>Provides Core functionality for the Model View Presenter pattern</summary>
+        <releaseNotes>Please refer to the online documentation</releaseNotes>
+        <copyright>WebPx Technologies</copyright>
+        <language>en-US</language>
+        <tags>WebPx, MVP, Presentation Layer, UX, UI</tags>
+    </metadata>
+    <files>
+      <file src="web.config.install.xdt" target="content\web.config.install.xdt" />
+      <file src="web.config.uninstall.xdt" target="content\web.config.uninstall.xdt" />
+      <file src="bin\Release\WebPx.Presentation.dll" target="lib\WebPx.Presentation.dll" />
+    </files>
+</package>
