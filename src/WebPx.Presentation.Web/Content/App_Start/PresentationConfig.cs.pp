@@ -5,7 +5,7 @@ using WebPx.Presentation;
 
 namespace $rootnamespace$
 {
-    public static class UnityConfig
+    public static class PresentationConfig
     {
         public static void Register()
         {         

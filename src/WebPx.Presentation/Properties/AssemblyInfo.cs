@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("Model-View-Presenter Framework")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("WebPx Technologies")]
-[assembly: AssemblyProduct("WebPx Framework")]
+[assembly: AssemblyProduct("WebPx Presentation Framework")]
 [assembly: AssemblyCopyright("Copyright © WebPx Technologies 2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

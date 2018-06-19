@@ -74,6 +74,9 @@
     <Compile Include="Presentation\ContentType.cs" />
     <Compile Include="Presentation\ControllerInjectedEventArgs.cs" />
     <Compile Include="Presentation\ControllerInjectedEventHandler.cs" />
+    <Compile Include="Presentation\PagedItems.cs" />
+    <Compile Include="Presentation\PageEventArgs.cs" />
+    <Compile Include="Presentation\PageEventHandler.cs" />
     <Compile Include="Presentation\PresenterBuilder.cs" />
     <Compile Include="Presentation\Controllers.cs" />
     <Compile Include="Presentation\CreatePresenter.cs" />

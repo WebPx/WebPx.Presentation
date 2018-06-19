@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>WebPx.Presentation.Web</id>
-    <version>1.0.0</version>
+    <version>1.0.0.3</version>
     <authors>WebPx Technologies</authors>
     <owners>WebPx Technologies</owners>
     <licenseUrl>http://opensource.org/licenses/MIT</licenseUrl>
@@ -11,7 +11,7 @@
     <description>Library for developing with the Model View Presenter pattern for .net</description>
     <tags>presentation mvp asp.net ioc di</tags>
     <dependencies>
-      <dependency id="WebPx.Presentation" version="1.0.0" />
+      <dependency id="WebPx.Presentation" version="1.0.0.6" />
     </dependencies>
   </metadata>
   <files>

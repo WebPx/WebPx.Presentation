@@ -8,9 +8,9 @@ and the WebPx.Presentation framework will use this to attach presenters at compi
 
 e.g.
  
-public class MvcApplication : System.Web.HttpApplication
+public class Global : System.Web.HttpApplication
 {
-  protected void Application_Start()
+  void Application_Start()
   {
     ...
     PresentationConfig.Register();                           // <----- Add this line

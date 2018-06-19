@@ -118,6 +118,7 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+    <None Include="WebPx.Presentation.Unity.nuspec" />
     <None Include="WebPx6.pfx" />
   </ItemGroup>
   <ItemGroup>
