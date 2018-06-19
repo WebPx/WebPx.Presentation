@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>WebPx.Presentation.Unity</id>
+    <version>1.0.0.3</version>
+    <title>WebPx.Presentation.Unity</title>
+    <authors>WebPx.Technologies</authors>
+    <owners>WebPx.Technologies</owners>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <licenseUrl>http://opensource.org/licenses/MIT</licenseUrl>
+    <projectUrl>https://github.com/WebPx/WebPx.Presentation.Web</projectUrl>
+    <description>-</description>
+    <summary>WebPx.Presentation.Unity</summary>
+    <copyright>Copyright © Microsoft 2018</copyright>
+    <dependencies>
+      <dependency id="WebPx.Presentation" version="1.0.0.3" />
+      <dependency id="Unity" version="5.8.6" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="lib\net45\_._" target="lib\net45\_._" />
+  </files>
+</package>
