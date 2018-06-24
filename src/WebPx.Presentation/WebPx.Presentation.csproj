@@ -59,13 +59,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Messaging\MessageCenter.cs" />
-    <Compile Include="Messaging\MessageEventArgs.cs" />
-    <Compile Include="Messaging\MessageEventHandler.cs" />
-    <Compile Include="Messaging\MessageExtensions.cs" />
-    <Compile Include="Messaging\MessageSubscribers.cs" />
-    <Compile Include="Messaging\StandardMessages.cs" />
-    <Compile Include="Messaging\StateChangingEventArgs.cs" />
     <Compile Include="Presentation\ApplicationController.cs" />
     <Compile Include="Presentation\ApplicationControllerAttribute.cs" />
     <Compile Include="Presentation\ApplicationControllerMode.cs" />
@@ -74,9 +67,8 @@
     <Compile Include="Presentation\ContentType.cs" />
     <Compile Include="Presentation\ControllerInjectedEventArgs.cs" />
     <Compile Include="Presentation\ControllerInjectedEventHandler.cs" />
-    <Compile Include="Presentation\PagedItems.cs" />
-    <Compile Include="Presentation\PageEventArgs.cs" />
-    <Compile Include="Presentation\PageEventHandler.cs" />
+    <Compile Include="Presentation\IPresenterData.cs" />
+    <Compile Include="Presentation\PresentationDataProvider.cs" />
     <Compile Include="Presentation\PresenterBuilder.cs" />
     <Compile Include="Presentation\Controllers.cs" />
     <Compile Include="Presentation\CreatePresenter.cs" />

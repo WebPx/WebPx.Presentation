@@ -7,7 +7,7 @@ using Unity;
 
 namespace WebPx.Presentation
 {
-    public static class UnityConfig
+    public static class UnityResolution
     {
         private static UnityContainer _unityContainer;
 

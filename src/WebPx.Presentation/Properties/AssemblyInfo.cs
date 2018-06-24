@@ -34,3 +34,4 @@ using System.Runtime.InteropServices;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("7.0.0.0")]
 [assembly: AssemblyFileVersion("7.0.0.0")]
+[assembly: InternalsVisibleTo("WebPx.Presentation.Web, PublicKey=0024000004800000940000000602000000240000525341310004000001000100b1000e03257dff58fb47b111e50027d557f72aa0f1241b83b96791b2c061965a11a35b37d50898ea877755b181b48b37017bb5627e3e3f81d482d1aa1805a8daf435ae04ec1c732dc9e7b239c485ae23185c31d7c9a2cc2125b19c15ceee1b30c15735e2e2c8348c61eafd693eaa123893ad7eba952be28e267e4de4f6e4ae8b")]

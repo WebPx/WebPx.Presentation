@@ -25,7 +25,7 @@ namespace WebPx.Presentation
                 manager.Add(new StatusMessage() { StatusType = statusType, ContentType = contentType, Content = content });
         }
 
-        public static StatusMessage[] GetMessaages()
+        public static StatusMessage[] GetMessages()
         {
             var manager = GetManager();
             return manager != null ? manager.GetMessages() : null;

@@ -130,5 +130,14 @@ namespace WebPx.Presentation
 
             public Expression Expression { get; set; }
         }
+
+        private static PresentationDataProvider _AppDataProvider;
+
+        public static PresentationDataProvider AppDataProvider { get => _AppDataProvider; }
+
+        internal static void SetDataProvider(PresentationDataProvider provider)
+        {
+            _AppDataProvider = provider;
+        }
     }
 }

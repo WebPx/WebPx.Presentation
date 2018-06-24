@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>WebPx.Presentation.Unity</id>
-    <version>1.0.0.5</version>
+    <version>1.0.0.6</version>
     <title>WebPx.Presentation.Unity</title>
     <authors>WebPx Technologies</authors>
     <owners>WebPx Technologies</owners>
@@ -13,11 +13,13 @@
     <summary>WebPx.Presentation.Unity</summary>
     <copyright>Copyright © WebPx Technologies 2018</copyright>
     <dependencies>
-      <dependency id="WebPx.Presentation" version="1.0.0.6" />
+      <dependency id="WebPx.Presentation" version="1.0.0.7" />
       <dependency id="Unity" version="5.8.6" />
     </dependencies>
   </metadata>
   <files>
+    <file src="bin\Release\content\App_Start\PresentationUnityConfig.cs.pp" target="content\App_Start\PresentationUnityConfig.cs.pp" />
+    <file src="bin\Release\readme.txt" target="readme.txt" />
     <file src="bin\Release\WebPx.Presentation.Unity.dll" target="lib\net45\WebPx.Presentation.Unity.dll" />
   </files>
 </package>

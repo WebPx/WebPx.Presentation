@@ -6,5 +6,13 @@ using System.Threading.Tasks;
 
 namespace WebPx.Presentation
 {
-    public delegate void PageEventHandler(object sender, PageEventArgs args);
+    public class PresentationDataProvider
+    {
+        public PresentationDataProvider()
+        {
+
+        }
+
+
+    }
 }

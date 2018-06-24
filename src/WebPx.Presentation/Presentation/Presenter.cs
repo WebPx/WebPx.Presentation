@@ -96,6 +96,16 @@ namespace WebPx.Presentation
         public TView View { get; private set; }
 
         protected abstract void AttachView(TView view);
+
+        private IPresenterData _data;
+
+        public IPresenterData Data
+        {
+            get
+            {
+                return _data;
+            }
+        }
     }
 
     public abstract class Presenter<TModel, TView> : Presenter<TView>

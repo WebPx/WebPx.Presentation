@@ -20,7 +20,7 @@ namespace WebPx.Presentation
                 foreach (var parameter in apType.GetProperties())
                     parameters.Add(parameter.Name, parameter.GetValue(anonymousParameters));
             }
-            return UnityConfig.Container.Resolve(objectType, parameters);
+            return UnityResolution.Container.Resolve(objectType, parameters);
         }
         public static T GetInstance<T>(object anonymousParameters)
         {
@@ -32,7 +32,7 @@ namespace WebPx.Presentation
                 foreach (var parameter in anonymousParameters.GetType().GetProperties())
                     parameters.Add(parameter.Name, parameter.GetValue(parameter));
             }
-            return (T)UnityConfig.Container.Resolve(objectType, parameters);
+            return (T)UnityResolution.Container.Resolve(objectType, parameters);
         }
     }
 }
