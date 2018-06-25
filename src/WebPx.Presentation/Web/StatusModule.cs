@@ -32,7 +32,7 @@ namespace WebPx.Web
             HttpContext.Current.Items["StatusManager"] = new StatusManager();
         }
 
-        internal StatusManager GetManager(HttpContext context)
+        internal static StatusManager GetManager(HttpContext context)
         {
             return context.Items["StatusManager"] as StatusManager;
         }

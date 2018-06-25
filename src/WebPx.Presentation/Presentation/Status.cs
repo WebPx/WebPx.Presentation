@@ -13,8 +13,7 @@ namespace WebPx.Presentation
         private static StatusManager GetManager()
         {
             var context = HttpContext.Current;
-            var module = context.ApplicationInstance.Modules["StatusModule"] as StatusModule;
-            var manager = module.GetManager(context);
+            var manager = StatusModule.GetManager(context);
             return manager;
         }
 

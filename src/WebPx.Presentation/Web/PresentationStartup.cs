@@ -22,8 +22,8 @@ namespace WebPx.Web
                 DynamicPageApp.ClearTemplate = value;
                 HttpApplication.RegisterModule(typeof(DynamicPageApp));
 #endif
-                HttpApplication.RegisterModule(typeof(StatusModule));
             }
+            HttpApplication.RegisterModule(typeof(StatusModule));
         }
     }
 }
