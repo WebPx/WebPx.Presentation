@@ -46,6 +46,11 @@ namespace WebPx.Presentation
             return temp;
         }
 
+        internal static bool HasPresenter(Type viewType)
+        {
+            return PresenterResolver.DoCanResolve(viewType);
+        }
+
         public static object GetPresenterFor<TView>(TView view)
         {
             var viewType = typeof(TView);

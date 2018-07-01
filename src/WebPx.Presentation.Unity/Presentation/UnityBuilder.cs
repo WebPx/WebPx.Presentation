@@ -16,9 +16,9 @@ namespace WebPx.Presentation
 
         }
 
-        protected override object TryResolve(Type presenterType, object view)
+        protected override object TryResolve(Type viewType, object view)
         {
-            return UnityResolver.GetInstance(presenterType, new { view = view });
+            return UnityResolver.GetInstance(viewType, new { view = view });
             //ParameterOverrides parameters = null;
             //if (view != null)
             //{
@@ -26,6 +26,11 @@ namespace WebPx.Presentation
             //    parameters.Add("view", view);
             //}
             //return UnityConfig.Container.Resolve(presenterType, parameters);
+        }
+
+        protected override bool CanResolve(Type viewType)
+        {
+            return UnityResolver.CanResolve(viewType);
         }
     }
 }

@@ -57,6 +57,12 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="WebPx.Events, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cef91311a48ec8b, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebPx.Events.7.0.1.0\lib\WebPx.Events.dll</HintPath>
+    </Reference>
+    <Reference Include="WebPx.Patterns, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cef91311a48ec8b, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebPx.Patterns.6.0.0.0\lib\net40\WebPx.Patterns.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Presentation\ApplicationController.cs" />
@@ -67,7 +73,17 @@
     <Compile Include="Presentation\ContentType.cs" />
     <Compile Include="Presentation\ControllerInjectedEventArgs.cs" />
     <Compile Include="Presentation\ControllerInjectedEventHandler.cs" />
+    <Compile Include="Presentation\EntityPresenter.cs" />
+    <Compile Include="Presentation\IEntityPreseter.cs" />
+    <Compile Include="Presentation\IGridView.cs" />
+    <Compile Include="Presentation\IItemView.cs" />
+    <Compile Include="Presentation\IKeyedRepositoryPresenter.cs" />
+    <Compile Include="Presentation\IPagedGridView.cs" />
+    <Compile Include="Presentation\IPresenter.cs" />
     <Compile Include="Presentation\IPresenterData.cs" />
+    <Compile Include="Presentation\IRepositoryPresenter.cs" />
+    <Compile Include="Presentation\KeyedRepositoryExtensions.cs" />
+    <Compile Include="Presentation\KeyedRepositoryPresenter.cs" />
     <Compile Include="Presentation\PresentationDataProvider.cs" />
     <Compile Include="Presentation\PresenterBuilder.cs" />
     <Compile Include="Presentation\Controllers.cs" />
@@ -91,6 +107,7 @@
     <Compile Include="Presentation\PresenterAttribute.cs" />
     <Compile Include="Presentation\PresenterExtensions.cs" />
     <Compile Include="Presentation\Presenters.cs" />
+    <Compile Include="Presentation\RepositoryPresenter.cs" />
     <Compile Include="Presentation\ResolveControllerEventArgs.cs" />
     <Compile Include="Presentation\ResolveControllerEventHandler.cs" />
     <Compile Include="Presentation\ResolvePresenterEventArgs.cs" />
@@ -144,7 +161,6 @@
     </None>
     <None Include="WebPx6.pfx" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\..\packages\NuPack.3.4.4\build\NuPack.targets" Condition="Exists('..\..\packages\NuPack.3.4.4\build\NuPack.targets')" />
   <Import Project="..\packages\NuPack.3.4.4\build\NuPack.targets" Condition="Exists('..\packages\NuPack.3.4.4\build\NuPack.targets')" />

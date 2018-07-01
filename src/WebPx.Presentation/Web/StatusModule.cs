@@ -34,7 +34,7 @@ namespace WebPx.Web
 
         internal static StatusManager GetManager(HttpContext context)
         {
-            return context.Items["StatusManager"] as StatusManager;
+            return context?.Items["StatusManager"] as StatusManager;
         }
     }
 }

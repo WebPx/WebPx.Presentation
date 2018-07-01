@@ -2,15 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace WebPx.Presentation
 {
-    [View]
-    public interface IView
+    public interface IKeyedView<TKey>
     {
-    }
-
-    public interface IView<T> : IView
-    {
+        TKey Id { get; set; }
     }
 }

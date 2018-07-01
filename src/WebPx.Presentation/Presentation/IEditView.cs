@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,14 +8,13 @@ using System.Threading.Tasks;
 namespace WebPx.Presentation
 {
     [View]
-    public interface IEditView
+    public interface IEditView : IItemView
     {
-        event EventHandler Cancel;
-        event EventHandler Save;
+        event CancelEventHandler Update;
     }
 
     [View]
-    public interface IEditView<Tentity> : IEditView
+    public interface IEditView<TEntity> : IEditView, IItemView<TEntity>
     {
 
     }

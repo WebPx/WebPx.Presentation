@@ -37,5 +37,20 @@ namespace WebPx.Presentation
             }
             return presenter;
         }
+
+        internal bool DoCanResolve(Type viewType)
+        {
+            //return this.CanResolve(viewType);
+            var result = CanResolve(viewType);
+            if (result == false)
+                result = _parent.CanResolve(viewType);
+            return result;
+        }
+
+        protected virtual bool CanResolve(Type viewType)
+        {
+            var ci = Presenters.GetConstructor(viewType);
+            return ci != null;
+        }
     }
 }

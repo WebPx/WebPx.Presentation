@@ -35,14 +35,15 @@ namespace WebPx.Web.Compilation
                 var interfaces = type.FindInterfaces((checkType, fc) =>
                 {
                     var atts = checkType.GetCustomAttributes(typeof(ViewAttribute), true);
-                    return atts.Length > 0;
+                    return typeof(IView).IsAssignableFrom(checkType) || atts.Length > 0;
                 }, null);
                 if (interfaces!=null && interfaces.Length > 0)
                 {
-                    foreach (var viewInterface in interfaces)
-                        try
-                        {
-                            additionalState.Add("Presenter Constructor", viewInterface);
+                    var viewInterfaces = interfaces.Except(new[] { typeof(IView) }).Where(Presenters.HasPresenter);
+                    //foreach (var viewInterface in )
+                    //    try
+                    //    {
+                            additionalState.Add("Presenter Constructor", viewInterfaces.ToArray());
                             //var constructor = Presenters.GetConstructor(viewInterface);
                             //if (constructor!=null)
                             //    additionalState.Add("Presenter Constructor", constructor);
@@ -50,11 +51,11 @@ namespace WebPx.Web.Compilation
                             //{
                             //    System.CodeDom.CodeMethodInvokeExpression resolver = Presenters.GetResolver(viewInterface);
                             //}
-                        }
-                        catch
-                        {
+                        //}
+                        //catch
+                        //{
 
-                        }
+                        //}
                 }
             }
         }
@@ -71,7 +72,7 @@ namespace WebPx.Web.Compilation
             base.OnProcessGeneratedCode(controlBuilder, codeCompileUnit, baseType, derivedType, buildMethod, dataBindingMethod, additionalState);
             if (additionalState.Contains("Presenter Constructor"))
             {
-                var resolver = additionalState["Presenter Constructor"];
+                var views = additionalState["Presenter Constructor"];
                 //if (resolver is ConstructorInfo)
                 //{
                 //    var presenterConstructor = (ConstructorInfo)resolver;
@@ -85,20 +86,20 @@ namespace WebPx.Web.Compilation
                 //    //buildMethod.Statements.Insert(index++, new CodeMethodInvokeExpression(new CodeMethodReferenceExpression(new CodeTypeReferenceExpression(typeof(System.Diagnostics.Debug)), "WriteLine"), new CodePrimitiveExpression("Presenter Attaching...")));
                 //}
                 //else
-                if (resolver is Type)
-                {
-                    var type = (Type)resolver;
-                    var controlId = controlBuilder.ID;
-                    var injection = new CodeMethodInvokeExpression(
-                        new CodeMethodReferenceExpression(
-                            new CodeTypeReferenceExpression(typeof(Presenters)),
-                            "GetPresenterFor"),
-                        new CodeTypeOfExpression(type),
-                        new CodeVariableReferenceExpression(controlId));
-                    //Presenters.GetPresenterFor(type, this);
-                    int index = Math.Max(0, buildMethod.Statements.Count - 1);
-                    buildMethod.Statements.Insert(index++, new CodeExpressionStatement(injection));
-                }
+                if (views is Type[] viewTypes)
+                    foreach (var viewType in viewTypes)
+                    {
+                        var controlId = controlBuilder.ID;
+                        var injection = new CodeMethodInvokeExpression(
+                            new CodeMethodReferenceExpression(
+                                new CodeTypeReferenceExpression(typeof(Presenters)),
+                                "GetPresenterFor"),
+                            new CodeTypeOfExpression(viewType),
+                            new CodeVariableReferenceExpression(controlId));
+                        //Presenters.GetPresenterFor(type, this);
+                        int index = Math.Max(0, buildMethod.Statements.Count - 1);
+                        buildMethod.Statements.Insert(index++, new CodeExpressionStatement(injection));
+                    }
             }
         }
     }

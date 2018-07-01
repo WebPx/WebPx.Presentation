@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace WebPx.Presentation
 {
-    public class CreatePresenter<TView> : Presenter<TView>
-        where TView : ICreateView
+    public class CreatePresenter<TView, TEntity> : Presenter<TView>
+        where TView : ICreateView<TEntity>
     {
         public CreatePresenter(TView view) : base(view)
         {
@@ -16,24 +16,18 @@ namespace WebPx.Presentation
 
         protected override void AttachView(TView view)
         {
-            view.Cancel += Cancel;
-            view.Save += Save;
+            view.Create += Create;
         }
 
-        protected virtual void Save(object sender, EventArgs e)
+        protected virtual void Create(object sender, EventArgs e)
         {
-
-        }
-
-        protected virtual void Cancel(object sender, EventArgs e)
-        {
-
+            
         }
     }
 
-    public class CreatePresenter : CreatePresenter<ICreateView>
+    public class CreatePresenter<TEntity> : CreatePresenter<ICreateView<TEntity>, TEntity>
     {
-        public CreatePresenter(ICreateView view) : base(view)
+        public CreatePresenter(ICreateView<TEntity> view) : base(view)
         {
 
         }

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace WebPx.Presentation
 {
     [Presenter]
-    public abstract class Presenter<TView>
+    public abstract class Presenter<TView> : IPresenter<TView>
     {
         public Presenter(TView view)
         {

@@ -6,34 +6,28 @@ using System.Threading.Tasks;
 
 namespace WebPx.Presentation
 {
-    public class DeletePresenter<TView> : Presenter<TView>
-        where TView : IDeleteView
+    public class DeletePresenter<TView, TEntity> : Presenter<TView>
+        where TView : IDeleteView<TEntity>
     {
         public DeletePresenter(TView view) : base(view)
         {
-
+            
         }
 
         protected override void AttachView(TView view)
         {
-            view.Cancel += Cancel;
-            view.Save += Save;
+            view.Delete += Delete;
         }
 
-        protected virtual void Save(object sender, EventArgs e)
-        {
-
-        }
-
-        protected virtual void Cancel(object sender, EventArgs e)
+        protected virtual void Delete(object sender, EventArgs e)
         {
 
         }
     }
 
-    public class DeletePresenter : DeletePresenter<IDeleteView>
+    public class DeletePresenter<TEntity> : DeletePresenter<IDeleteView<TEntity>, TEntity>
     {
-        public DeletePresenter(IDeleteView view) : base(view)
+        public DeletePresenter(IDeleteView<TEntity> view) : base(view)
         {
 
         }

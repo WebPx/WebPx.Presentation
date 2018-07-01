@@ -34,5 +34,10 @@ namespace WebPx.Presentation
             }
             return (T)UnityResolution.Container.Resolve(objectType, parameters);
         }
+
+        internal static bool CanResolve(Type viewType)
+        {
+            return UnityResolution.Container.IsRegistered(viewType);
+        }
     }
 }
