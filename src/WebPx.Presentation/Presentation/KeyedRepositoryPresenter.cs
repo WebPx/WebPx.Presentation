@@ -55,7 +55,7 @@ namespace WebPx.Presentation
             if (View is IGridViewKey<TKey> gridViewKey)
                 this.Data["Key"] = gridViewKey.SelectedKey;
             else
-                throw new NotSupportedException($"The Repository does not support a recognized Grid Pattern");
+                throw new NotSupportedException($"The View does not support a recognized Grid Pattern");
         }
 
         protected override void LoadItems(object sender, EventArgs args)
@@ -113,7 +113,7 @@ namespace WebPx.Presentation
             if (View is IGridViewKey<TKey> gridViewKey)
                 this.Data["Key"] = gridViewKey.SelectedKey;
             else
-                throw new NotSupportedException($"The Repository does not support a recognized Grid Pattern");
+                throw new NotSupportedException($"The View does not support a recognized Grid Pattern");
         }
 
         protected override void LoadItems(object sender, EventArgs args)
@@ -172,7 +172,7 @@ namespace WebPx.Presentation
             if (View is IGridViewKey<TKey> gridViewKey)
                 this.Data["Key"] = gridViewKey.SelectedKey;
             else
-                throw new NotSupportedException($"The Repository does not support a recognized Grid Pattern");
+                throw new NotSupportedException($"The View does not support a recognized Grid Pattern");
         }
 
         protected override void LoadItems(object sender, EventArgs args)
