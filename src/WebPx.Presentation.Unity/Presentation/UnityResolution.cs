@@ -26,5 +26,12 @@ namespace WebPx.Presentation
         {
             Container.RegisterType<TContract, TService>();
         }
+
+        public static TContract Resolve<TContract>()
+        {
+            if (typeof(TContract).IsInterface && !Container.IsRegistered<TContract>())
+                return default(TContract);
+            return Container.Resolve<TContract>();
+        }
     }
 }

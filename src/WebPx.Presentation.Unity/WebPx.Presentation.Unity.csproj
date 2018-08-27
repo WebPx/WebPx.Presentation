@@ -109,7 +109,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="WebPx.Patterns, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cef91311a48ec8b, processorArchitecture=MSIL">
-      <HintPath>..\packages\WebPx.Patterns.6.0.0.0\lib\net40\WebPx.Patterns.dll</HintPath>
+      <HintPath>..\packages\WebPx.Patterns.6.0.0.4\lib\net40\WebPx.Patterns.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

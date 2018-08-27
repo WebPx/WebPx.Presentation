@@ -30,31 +30,48 @@ namespace WebPx.Presentation
         protected override void Create(object sender, CancelEventArgs e)
         {
             var item = ((ICreateView<TEntity>)this.View).Item;
-            e.Cancel = !Repository.Create(item);
-            if (!e.Cancel)
+
+            var created = ItemCreating(item) && Repository.Create(item);
+            if (created)
                 ItemCreated(item);
+            e.Cancel = !created;
             MessageCenter.Assert(!e.Cancel, this, StandardMessages.Created, item);
         }
+
+        public virtual bool ItemCreating(TEntity item) => true;
 
         protected abstract void ItemCreated(TEntity item);
 
         protected override void Update(object sender, CancelEventArgs e)
         {
             var item = ((IItemView<TEntity>)this.View).Item;
-            e.Cancel = !Repository.Update(item);
+            var updated = ItemUpdating(item) && Repository.Update(item);
+            if (updated)
+                ItemUpdated(item);
+            e.Cancel = !updated;
             MessageCenter.Assert(!e.Cancel, this, StandardMessages.Updated, item);
         }
+
+        public virtual bool ItemUpdating(TEntity item) => true;
+
+        protected virtual void ItemUpdated(TEntity item) { }
 
         protected override void Delete(object sender, CancelEventArgs e)
         {
             if (Repository is IDeletableRepository<TEntity> deletable)
             {
-                e.Cancel = !deletable.Delete(((IItemView<TEntity>)this.View).Item);
+                var item = ((IItemView<TEntity>)this.View).Item;
+                var deleted = ItemDeleting(item) && deletable.Delete(item);
+                e.Cancel = !deleted;
                 MessageCenter.Assert<TEntity>(!e.Cancel, this, StandardMessages.Updated);
             }
             else
                 throw new NotSupportedException($"The Repository does not support a recognized Delete Pattern");
         }
+
+        public virtual bool ItemDeleting(TEntity item) => true;
+
+        protected virtual void ItemDeleted(TEntity item) { }
 
         protected override void LoadItems(object sender, EventArgs args)
         {

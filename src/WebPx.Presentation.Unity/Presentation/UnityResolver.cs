@@ -5,10 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using Unity;
 using Unity.Resolution;
+using WebPx.Dependency;
 
 namespace WebPx.Presentation
 {
-    public static class UnityResolver
+    public sealed class UnityResolver : IResolver
     {
         public static object GetInstance(Type objectType, object anonymousParameters)
         {
@@ -38,6 +39,11 @@ namespace WebPx.Presentation
         internal static bool CanResolve(Type viewType)
         {
             return UnityResolution.Container.IsRegistered(viewType);
+        }
+
+        public T Resolve<T>()
+        {
+            return UnityResolution.Resolve<T>();
         }
     }
 }

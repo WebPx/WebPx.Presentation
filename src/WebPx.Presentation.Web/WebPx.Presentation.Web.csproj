@@ -49,6 +49,9 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="WebPx.Patterns, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cef91311a48ec8b, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebPx.Patterns.6.0.0.4\lib\net40\WebPx.Patterns.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Presentation\Web\IStateBag.cs" />
